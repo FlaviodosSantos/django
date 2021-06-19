@@ -1,0 +1,28 @@
+{% load static %}
+  
+{# Load the tag library #}
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+
+<link rel="stylesheet" href="../../static/css/bootstrap.css" >
+<div class="container">
+    <h1 class="container" >Create or Update</h1>
+    
+    
+    <form class="container" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <a  href="{% url 'contatos_list' %}" class="btn btn-danger" size="large">
+                Back
+            </a>
+            <button type="submit" class="btn btn-success">
+                Submit
+            </button>            
+        {% endbuttons %}
+        
+    </form>
+
+</div>

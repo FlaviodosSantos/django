@@ -1,0 +1,59 @@
+{% load static %}
+  
+<!--link rel="stylesheet" href="../../static/css/bootstrap.css"-->
+<link rel="stylesheet" href="../../static/css/bootstrap.min.css" >
+
+<div class="container">
+
+    <h1 >Contatos List</h1>
+    
+    <table class="container">
+        <head>  
+                      
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+        </head>
+        <body>
+            {% for contatos in object_list %}
+            <tr>
+                <td>{{ contatos.id }} </td>
+                <td>{{ contatos.name }}</td>
+                <td>{{ contatos.phone }}</td>
+                <td>
+                    <a href="{% url 'contatos_update' contatos.id %}" class="btn btn-warning"  >Edit</a>
+                    <a href="{% url 'contatos_delete' contatos.id %}" class="btn btn-danger" >Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </body>
+    </table>
+    <div>
+        <p>
+            {% block pagination %}
+                {% if is_paginated %}
+                    <div class="pagination">
+                        <span class="page-links">
+                            {% if page_obj.has_previous %}
+                                <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                            {% endif %}
+                            <span class="page-current">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                            </span>
+                            {% if page_obj.has_next %}
+                                <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                            {% endif %}
+                        </span>
+                        
+                    </div>
+                {% endif %}
+            {% endblock %} 
+                  
+        </p> 
+    </div>    
+        <a href="{% url 'contatos_create' %}" class="btn btn-success" padding-left="20px" >Create</a>  
+    
+</div>
