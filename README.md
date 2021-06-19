@@ -1,1 +1,1 @@
-"# Pasta com projetos/estudo django" 
+# Pasta com projetos/estudo django
