@@ -1,1 +1,1 @@
-"# Projeto de crud django com bootstrap 5" 
+# Projeto de crud django com bootstrap 5 
