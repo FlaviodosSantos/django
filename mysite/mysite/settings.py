@@ -11,11 +11,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+#forçando o caminho para os templetes
+TEMPLATES_DIRS = os.path.join(BASE_DIR,'blog/templates/blog')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIRS], #adicionando variável pra forçar o caminho dos templates 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
