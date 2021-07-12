@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    
+    'crispy_forms',
     # local
     'pages.apps.PagesConfig',
 ]
@@ -141,3 +141,8 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/"
+
+
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
