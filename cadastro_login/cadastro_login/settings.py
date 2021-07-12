@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     # local
     'pages.apps.PagesConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,6 @@ ACCOUNT_UNIQUE_EMAIL = True
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
+# user model
+
+AUTH_USER_MODEL = "users.CustomUser"
