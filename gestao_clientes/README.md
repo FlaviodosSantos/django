@@ -1,3 +1,3 @@
-# Pasta com app gestão de clientes
+# Pasta com webapp gestão de clientes
 
 
