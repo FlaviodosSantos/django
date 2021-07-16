@@ -1,10 +1,20 @@
-from django.shortcuts import render
+from django.forms import forms
+from django.shortcuts import redirect, render
 from .models import Person
+from .forms import PersonForm
 
 def person_list(request):
     persons = Person.objects.all()
     return render(request, 'person.html', {'persons': persons})
 
 
-def tela_inicio(request):
-    return render(request, 'index.html')
+def person_new(request):
+    form = PersonForm(request.POST, request.FILES, None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('person_list')
+
+    return render(request, 'person_form.html', {'form': form})
+
+
