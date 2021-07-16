@@ -8,7 +8,7 @@
 <body>
     <ul>
         {% for person in persons %}
-        <li> {{ person }} </li>
+        <li> <a href="{% url 'person_update' person.id %}" > {{ person.first_name }} </a></li>
         {% endfor %}
     </ul>   
     <br>
