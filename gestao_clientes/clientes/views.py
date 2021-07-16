@@ -17,6 +17,7 @@ def person_new(request):
 
     return render(request, 'person_form.html', {'form': form})
 
+
 def person_update(request, id):
     person = get_object_or_404(Person, pk = id)
     form = PersonForm(request.POST or None, request.FILES or None, instance = person)
