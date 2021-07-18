@@ -1,7 +1,7 @@
 <h2>Sair</h2>
     <p>Você tem certeza que deseja sair?</p>
-    <form method="post" action="{% url 'logout' %}">
+    <form method="POST" action="">
         {% csrf_token %}
-        <button href=" {% url 'login' %} "  class="btn btn-danger" type="submit">Sair</button>
+        <button class="btn btn-danger" type="submit">Sair</button>
     </form>
     

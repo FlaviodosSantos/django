@@ -1,6 +1,7 @@
-from django.http import request
+
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 from .models import Person
 from .forms import PersonForm
 
@@ -44,6 +45,15 @@ def person_delete(request, id):
     return render(request, 'person_delete_confirm.html', {'person': person} )
 
 
-def hello(request):
+def my_logout(request):
     
+    if request.method == 'POST':
+        logout(request)
+        return redirect('hello')
+
+    return render(request, 'logout.html' )    
+    
+
+
+def hello(request):    
     return render(request, 'index2.html')

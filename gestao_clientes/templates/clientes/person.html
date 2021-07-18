@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Ola {{ user.username }} ! </h2>
     <a href=" {% url 'logout' %} " >Sair</a>
     <ul>
         {% for person in persons %}
