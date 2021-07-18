@@ -27,3 +27,19 @@ def person_update(request, id):
         return redirect('person_list')
 
     return render(request, 'person_form.html', {'form': form} )
+
+
+def person_delete(request, id):
+    person = get_object_or_404(Person, pk = id)
+    #form = PersonForm(request.POST or None, request.FILES or None, instance = person)
+
+    if request.method == 'POST':
+        person.delete()
+        return redirect('person_list')
+
+    return render(request, 'person_delete_confirm.html', {'person': person} )
+
+
+def hello(request):
+    
+    return render(request, 'index2.html')
