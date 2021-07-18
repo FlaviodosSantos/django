@@ -6,11 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    {% load crispy_forms_tags %}
+    <h1>Novo Cliente</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form }}
+        {{ form | crispy }}
 
+        <br>
         <button type="submit">Salvar</button>
     </form>
     
