@@ -55,7 +55,7 @@ ROOT_URLCONF = 'gestao_clientes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates','templates/clientes'],
+        'DIRS': ['templates','templates/clientes','templates/registration'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,13 +123,18 @@ STATICFILES_DIRS = [
     'static'
 ]
 
+# arquivos de media
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = 'media'
+
+# login e logout
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = 'person_list'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
