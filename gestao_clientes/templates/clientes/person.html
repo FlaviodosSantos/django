@@ -2,55 +2,36 @@
 
 {% block title %}Bem vindo{% endblock %}
 
-{% block main %}
-    
-    <!-- 
+{% block main %}    
 
-        <ul >
-        {% for person in persons %}
-        <li> 
-            <a href="{% url 'person_update' person.id %}" > {{ person.first_name }} </a>
-            <a href="{% url 'person_delete' person.id %}" class="btn btn-danger" > Delete </a>
-        </li>
-        {% endfor %}
-    </ul>   
-    <br>
-    <a href="{% url 'person_new' %}" class="btn btn-success" > Novo cliente</a>
-    <br>
+<div class="col-4 ">
 
-    -->
-    
+    <h2>Ola {{ user.username }} ! </h2>  
 
-<div class=" container">
-
-    <h2>Ola {{ user.username }} ! </h2>
-    
-
-    <div >
-        <div class="col-4 ">
-            <table class=" table table-dark table-striped vertical-align: middle ">
-            <thead>
-                <tr>
+    <div >        
+        <table class=" table table-dark table-striped vertical-align: middle ">
+        <thead>
+            <tr>
+            
+            <th scope="col">nome</th>
+            <th scope="col">ação</th>
+            
+            </tr>
+        </thead>
+        <tbody >
+            {% for person in persons %}
+                <tr  class="align: middle" >
                 
-                <th scope="col">nome</th>
-                <th scope="col">ação</th>
                 
+                    <td><a href="{% url 'person_update' person.id %}" > {{ person.first_name }} </a></td>
+                    <td><a href="{% url 'person_delete' person.id %}" class="btn btn-danger" > Delete </a></td>
+                        
                 </tr>
-            </thead>
-            <tbody >
-                {% for person in persons %}
-                    <tr  class="align: middle" >
-                    
-                    
-                        <td><a href="{% url 'person_update' person.id %}" > {{ person.first_name }} </a></td>
-                        <td><a href="{% url 'person_delete' person.id %}" class="btn btn-danger" > Delete </a></td>
-                            
-                    </tr>
-                {% endfor %}
-                
-            </tbody>
-            </table>
-        </div>
+            {% endfor %}
+            
+        </tbody>
+        </table>
+        
     </div>
     <a class="btn btn-warning" href=" {% url 'logout' %} " >Sair</a>
     <a href="{% url 'person_new' %}" class="btn btn-success" > Novo cliente</a>
