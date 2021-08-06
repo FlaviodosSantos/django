@@ -47,15 +47,18 @@
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="#">About</a>
                         {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
+                            <li class="nav-item text-black">
+                                <a class="nav-link text-black font-weight-bold" href="">Adicionar Post</a>
+                            </li>
+                            <li class="nav-item text-black">
+                                <a class="nav-link text-black font-weight-bold" href="">Sair</a>
                             </li>
                             {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="">Entrar</a>
+                            <li class="nav-item text-black">
+                                <a class="nav-link text-black font-weight-bold" href="">Entrar</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">Cadastro</a>
+                            <li class="nav-item text-black">
+                                <a class="nav-link text-black font-weight-bold" href="">Cadastro</a>
                             </li>
                         {% endif %}
                     </ul>
