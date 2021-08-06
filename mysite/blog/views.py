@@ -1,4 +1,5 @@
 from django.views import generic
+from django.urls import reverse_lazy
 from .models import Post
 
 class PostList(generic.ListView):
@@ -10,4 +11,7 @@ class PostDetail(generic.DeleteView):
     model = Post
     template_name = 'post_detail.html'
 
-
+class PostCreate(generic.CreateView):
+    model = Post
+    fields = "__all__"
+    success_url = reverse_lazy('home')
