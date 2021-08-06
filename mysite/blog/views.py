@@ -1,5 +1,6 @@
 from django.views import generic
 from django.urls import reverse_lazy
+from django.views.generic.base import RedirectView
 from .models import Post
 
 class PostList(generic.ListView):
@@ -15,3 +16,9 @@ class PostCreate(generic.CreateView):
     model = Post
     fields = "__all__"
     success_url = reverse_lazy('home')
+
+class PostUpdate(generic.UpdateView):
+    model = Post
+    fields = "__all__"
+    success_url = reverse_lazy('home')
+
