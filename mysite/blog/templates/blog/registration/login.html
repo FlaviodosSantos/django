@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Faça o login{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card auth-card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Faça o seu login</h1>
+                    <form class="text-center" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                        {{ form | crispy }}
+                        <input class="btn btn-primary" type="submit" value="Login">
+                    </form>
+                </div>
+            </div>
+            
+
+        </div>
+        
+    </div>
+{% endblock %}
