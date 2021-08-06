@@ -55,10 +55,12 @@
                             <li class="nav-item text-black">
                                 <a class="nav-link text-black font-weight-bold" href="">Adicionar Post</a>
                             </li>
+                        <!-- logout sai automaticamente se clicar e volta pro home sem preciar de template  -->        
                             <li class="nav-item text-black">
                                 <a class="nav-link text-black font-weight-bold" href="{% url 'logout' %}">Sair</a>
                             </li>
-                        {% else %}
+                            
+                        {% else %}                        
                             <li class="nav-item text-black">
                                 <a class="nav-link text-black font-weight-bold" href="{% url 'login' %}">Entrar</a>
                             </li>
