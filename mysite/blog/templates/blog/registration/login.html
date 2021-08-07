@@ -12,6 +12,7 @@
                     <form class="text-center" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ next }}">
+                        
                         {{ form | crispy }}
                         <input class="btn btn-primary" type="submit" value="Login">
                     </form>
