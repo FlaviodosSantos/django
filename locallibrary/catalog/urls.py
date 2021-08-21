@@ -1,7 +1,7 @@
 from django import urls
 from django.urls import path
-from catalog import views
+from .views import hello
 
-urlpattern = [
-    
+urlpatterns = [
+    path('hello', hello, name='hello' ),
 ]
