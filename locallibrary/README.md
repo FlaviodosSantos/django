@@ -19,7 +19,7 @@ Os principais recursos que foram implementados atualmente são:
 presente em admin.py, mas comentado).
 * Os bibliotecários podem renovar livros reservados
 
-
+![Local library Model](https://raw.githubusercontent.com/FlaviodosSantos/django/main/locallibrary/image/local_library_model_uml.png)
 
 ## Quick Start
 
